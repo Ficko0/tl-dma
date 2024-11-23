@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export default function Hero() {
   // This code bellow is one example with a logo attached
 
@@ -28,18 +30,33 @@ export default function Hero() {
   return (
     <div>
       <div className="flex flex-col justify-center items-center flex-wrap">
-        <h1 className="text-white text-[11rem] font-bold mt-[11rem]">
+        <motion.h1
+          initial={{ opacity: 0, x: -200 }} // Initial state: hidden and scaled down
+          animate={{ opacity: 1, x: 0 }} // Final state: fully visible and normal size
+          transition={{ duration: 0.7, type: "tween" }}
+          className="text-white text-[11rem] font-bold mt-[11rem]"
+        >
           TechLex
-        </h1>
-        <p className="text-white font-extralight text-[2.6rem]">
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, x: 200 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, type: "tween" }}
+          className="text-white font-extralight text-[2.6rem]"
+        >
           Your go-to digital marketing agency!
-        </p>
+        </motion.p>
       </div>
-      <div className="flex flex-wrap justify-center items-center mt-[6rem]">
-        <button className="border border-white text-[1.3rem] py-2 px-6 rounded-full bg-white text-gray-800 font-semibold">
+      <motion.div
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, type: "spring" }}
+        className="flex flex-wrap justify-center items-center mt-[6rem]"
+      >
+        <button className="border border-white text-[1.3rem] py-2 px-6 rounded-full bg-white text-gray-800 font-semibold hover:scale-110 transition hover:bg-gray-200">
           Schedule a Meeting
         </button>
-      </div>
+      </motion.div>
     </div>
   );
 }
