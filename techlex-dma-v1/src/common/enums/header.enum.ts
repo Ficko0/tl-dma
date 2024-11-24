@@ -1,6 +1,5 @@
 export enum HeaderEnum {
-  Home = "Home",
-  Services = "Services",
-  AboutUs = "About Us",
-  Contact = "Contact",
+  services = "Services",
+  about = "About",
+  contact = "Contact",
 }

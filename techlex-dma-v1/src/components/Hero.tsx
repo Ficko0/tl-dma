@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import logoImage from "../public/techlex-logo.png";
 
 export default function Hero() {
   // This code bellow is one example with a logo attached
@@ -28,35 +29,37 @@ export default function Hero() {
   // This code bellow is without a logo and is way cleaner
 
   return (
-    <div>
-      <div className="flex flex-col justify-center items-center flex-wrap">
-        <motion.h1
-          initial={{ opacity: 0, x: -200 }} // Initial state: hidden and scaled down
-          animate={{ opacity: 1, x: 0 }} // Final state: fully visible and normal size
-          transition={{ duration: 0.7, type: "tween" }}
-          className="text-white text-[11rem] font-bold mt-[11rem]"
+    <>
+      <div className="flex flex-wrap justify-around items-center my-20">
+        <motion.div
+          initial={{ opacity: 0, x: -200 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2 }}
+          className="text-center cursor-default"
         >
-          TechLex
-        </motion.h1>
-        <motion.p
+          <h1 className="text-white font-bold text-[9rem]">Techlex</h1>
+          <span className="text-white font-light text-[2rem]">
+            Your Go-To Digital Marketing Agency
+          </span>
+        </motion.div>
+        <motion.div
           initial={{ opacity: 0, x: 200 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, type: "tween" }}
-          className="text-white font-extralight text-[2.6rem]"
+          transition={{ duration: 1.2 }}
         >
-          Your go-to digital marketing agency!
-        </motion.p>
+          <img className="align-middle size-[30rem]" src={logoImage} alt="" />
+        </motion.div>
       </div>
       <motion.div
-        initial={{ opacity: 0, y: -100 }}
+        initial={{ opacity: 0, y: -150 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, type: "spring" }}
-        className="flex flex-wrap justify-center items-center mt-[6rem]"
+        transition={{ duration: 1.8, type: "spring" }}
+        className="flex justify-center items-center"
       >
-        <button className="border border-white text-[1.3rem] py-2 px-6 rounded-full bg-white text-gray-800 font-semibold hover:scale-110 transition hover:bg-gray-200">
+        <button className="bg-white px-5 py-4 text-xl rounded-full hover:bg-gray-200 transition hover:scale-105 hover:font-semibold">
           Schedule a Meeting
         </button>
       </motion.div>
-    </div>
+    </>
   );
 }
