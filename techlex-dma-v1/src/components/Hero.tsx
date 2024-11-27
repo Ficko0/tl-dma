@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import logoImage from "../public/techlex-logo.png";
+import { ContactButton } from "./ContactButton";
 
 export default function Hero() {
   // This code bellow is one example with a logo attached
@@ -32,8 +33,8 @@ export default function Hero() {
     <>
       <div className="flex flex-wrap justify-around items-center md:my-20">
         <motion.div
-          initial={{ opacity: 0, x: -200 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, x: -200, filter: "blur(10px)" }}
+          animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
           transition={{ duration: 1.2 }}
           className="text-center cursor-default w-full md:w-auto"
         >
@@ -51,35 +52,20 @@ export default function Hero() {
           className="w-full md:w-auto"
         >
           <img
-            className="w-[25rem] md:w-[30rem] mx-auto hover:scale-105 transition"
+            className="w-[25rem] md:w-[30rem] mx-auto"
             src={logoImage}
             alt="logo"
           />
         </motion.div>
       </div>
       <motion.div
-        initial={{ opacity: 0, y: -150 }}
+        initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.8, type: "spring" }}
-        className="flex justify-center items-center w-full"
+        viewport={{ once: true }}
+        transition={{ duration: 1.2 }}
+        className="w-fit m-auto"
       >
-        <motion.div
-          initial={{ opacity: 0, y: -150 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.8, type: "spring" }}
-          className="flex justify-center items-center w-full"
-        >
-          <motion.div
-            initial={{ opacity: 0, y: -150 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.8, type: "spring" }}
-            className="flex justify-center items-center w-full"
-          >
-            <button className="bg-white px-4 py-2 my-5 text-base rounded-full hover:bg-gray-200 transition hover:scale-105 hover:font-semibold w-full md:w-auto md:px-5 md:py-3 md:text-lg">
-              Schedule a Meeting
-            </button>
-          </motion.div>
-        </motion.div>
+        <ContactButton />
       </motion.div>
     </>
   );

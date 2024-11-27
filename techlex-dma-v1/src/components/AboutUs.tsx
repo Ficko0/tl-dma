@@ -58,7 +58,7 @@ export default function AboutUs() {
           className="w-full lg:w-[30rem] flex justify-center"
         >
           <img
-            className="mb-4 lg:h-[40rem] rounded-lg shadow-black shadow-lg hover:scale-105 transition hover:rotate-[3deg] object-cover"
+            className="mb-4 lg:h-[35rem] rounded-lg shadow-black shadow-lg transition object-cover"
             src={refImage}
             alt=""
           />
@@ -66,8 +66,8 @@ export default function AboutUs() {
       </div>
 
       <motion.span
-        initial={{ opacity: 0, y: 150 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 150, filter: "blur(10px)" }} // Initial state with blur
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }} // Final state with no blur
         viewport={{ once: true }}
         transition={{ duration: 1.5 }}
         className="flex justify-center items-center my-6 text-center"
